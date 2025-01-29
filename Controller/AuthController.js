@@ -25,7 +25,7 @@ const signup = async (req,res) => {
 
         res.status(201)
             .json({
-                message : "Signup Successfully", 
+                message : "Signup Successfully , You can login now", 
                 success: true
             })
 
@@ -96,64 +96,6 @@ const login = async (req,res) => {
     }
 
 }
-
-
-// const updateProfile = async (req,res) => {
-    
-//     try {
-
-//         const { email , password} = req.body;
-
-//         const errorMessage = "Incorrect email or password"
-
-//         const user = await UserModel.findOne({email}) 
-
-//         if(!user) {
-//             return res.status(403)
-//             .json({
-//                 message : errorMessage, 
-//                 success: false
-//             })
-//         }
-
-//         const isPassword = await bcrypt.compare(password , user.password)
-
-//         if(!isPassword) {
-//             return res.status(403)
-//             .json({
-//                 message : errorMessage, 
-//                 success: false
-//             })
-//         }
-
-//         const jwtToken = jwt.sign(
-//             {
-//             email : user.email ,
-//             _id: user._id ,
-//             },
-//             process.env.JWT_SECRET,
-//             {expiresIn : '24h'},
-//         )
-
-//         res.status(201)
-//             .json({
-//                 message : "Login Successfully", 
-//                 success: true ,
-//                 jwtToken,
-//                 email,
-//                 name: user.name,
-//             })
-
-        
-//     } catch (error) {
-//         res.status(500)
-//         .json({
-//             message : `Internal Server Error : ${error}`, 
-//             success: false
-//         })
-//     }
-
-// }
 
 
 const getProfile = async (req,res) => {
