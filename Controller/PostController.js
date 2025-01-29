@@ -42,7 +42,7 @@ const getAllPosts = async (req, res) => {
         .populate('user_id', 'name email')  
         .exec(); 
         
-        console.log(posts, 'postsposts');
+        // console.log(posts, 'postsposts');
         
         
 

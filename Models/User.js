@@ -18,6 +18,11 @@ const UserSchema  = new Schema({
         type: String,
         required : true,  
     },  
+
+    // friendlists: [{
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: 'FriendList',  // Reference to FriendList model
+    // }],
    
 })
 

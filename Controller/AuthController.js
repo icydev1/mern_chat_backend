@@ -1,6 +1,7 @@
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const UserModel = require("../Models/User");
+const FriendListModel = require('../Models/FriendList');
 
 const signup = async (req,res) => {
     
@@ -106,12 +107,19 @@ const getProfile = async (req,res) => {
     
     const user = await UserModel.findOne({email}) 
 
+    const friendlist = await FriendListModel.find({ added_by: user._id });
+
+    const response = {
+        user: user,          // Include the user data
+        friendlist: friendlist  // Include the friendlist data
+    };
+
         if(user) {
             return res.status(200)
             .json({
                 message : "User is Fetched", 
                 success: true,
-                data: user
+                data: response,
             })
         }
 }
