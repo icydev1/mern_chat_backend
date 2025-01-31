@@ -17,6 +17,11 @@ const chatRoomSchema = new mongoose.Schema({
     default: 0,  // 0 for active, modify status codes as needed
     required: true
   },
+  // is_room_deleted: {
+  //   type: Number,
+  //   default: 0,  // 0 for active, modify status codes as needed
+  //   required: true
+  // },
   added_by: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',  // Reference to the User model who added the chat room

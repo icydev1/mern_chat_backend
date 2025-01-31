@@ -124,8 +124,11 @@ const getProfile = async (req,res) => {
         }
 }
 
+
+
 module.exports = {
     signup,
     login,
-    getProfile
+    getProfile,
+    
 }
