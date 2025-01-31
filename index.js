@@ -48,8 +48,8 @@ io.on("connection", (socket) => {
     });
 
     socket.on("typing", (data) => {
-      const { sender_id } = data;
-      io.emit("typing", { sender_id });
+      const { sender_id, room_id } = data;
+      io.emit("typing", { sender_id, room_id });
     });
 
     // socket.on("stopTyping", (data) => {
