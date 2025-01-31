@@ -73,6 +73,11 @@ const ChatRoomList = async (req, res) => {
                     name: receiverList.name,
                     email: receiverList.email
                 },
+                authUser:{
+                    
+                    _id: user_id,
+                    
+                },
                 createdAt: chatRoom.created_at
             };
         });

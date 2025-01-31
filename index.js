@@ -46,6 +46,16 @@ io.on("connection", (socket) => {
       io.emit('message', message);
       
     });
+
+    socket.on("typing", (data) => {
+      const { sender_id } = data;
+      io.emit("typing", { sender_id });
+    });
+
+    // socket.on("stopTyping", (data) => {
+    //   const { room_id } = data;
+    //   socket.to(room_id).emit("stopTyping", { room_id });
+    // });
   
     // Handle user disconnect
     socket.on("disconnect", () => {
